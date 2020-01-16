@@ -109,8 +109,8 @@ class Role extends Resource
 
             \DigitalCloud\PermissionTool\Fields\Permission::make(__('PermissionTool::resources.Permissions'), 'permissions')->onlyOnForms(),
 
-            Text::make('permissions count')->withMeta(['value' => count($this->permissions)])->exceptOnForms(),
-            Text::make('users count')->withMeta(['value' => count($this->users)])->exceptOnForms(),
+            // Text::make('permissions count')->withMeta(['value' => count($this->permissions)])->exceptOnForms(),
+            // Text::make('users count')->withMeta(['value' => count($this->users)])->exceptOnForms(),
             DateTime::make(__('PermissionTool::roles.created_at'), 'created_at')->exceptOnForms(),
             DateTime::make(__('PermissionTool::roles.updated_at'), 'updated_at')->exceptOnForms(),
 
