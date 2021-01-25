@@ -74,8 +74,9 @@ class Role extends Resource
                 continue;
             }
             $resourceName = strtolower(substr(strrchr($resource, "\\"), 1));
+            $resourceName = \Str::plural($resourceName);
             $resourcePermissions = [
-                "viewAny $resourceName"         => "viewAny $resourceName",
+                "list $resourceName"         => "list $resourceName",
                 "create $resourceName"          => "create $resourceName",
                 "update $resourceName"          => "update $resourceName",
                 "view $resourceName"            => "view $resourceName",
@@ -83,7 +84,9 @@ class Role extends Resource
                 "force delete $resourceName"    => "force delete $resourceName",
                 "restore $resourceName"         => "restore $resourceName",
                 "attach $resourceName"          => "attach $resourceName",
-                "detach $resourceName"          => "detach $resourceName"
+                "detach $resourceName"          => "detach $resourceName",
+                "export $resourceName"          => "export $resourceName",
+                "import $resourceName"          => "import $resourceName",
             ];
             // add resource actions
             $object = new $resource($resource::$model);
